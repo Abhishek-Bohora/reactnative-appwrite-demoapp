@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
     borderRadius: 6,
     elevation: 5,
+    width: "100%",
   },
 
   customButtonText: {
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
     borderRadius: 6,
     elevation: 5,
+    width: "100%",
   },
 });
 export default CustomButton;

@@ -5,12 +5,13 @@ import {
   View,
   StyleSheet,
   Dimensions,
+  Image,
 } from "react-native";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { useState } from "react";
 import { createUser } from "../../lib/appwrite";
-
+import images from "../../constants/images";
 const { height: screenHeight } = Dimensions.get("window");
 const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,7 +49,13 @@ const SignUp = () => {
     <SafeAreaView>
       <ScrollView>
         <View style={styles.signUpMainContainer}>
-          <Text style={styles.signUpLabel}>Sign up</Text>
+          <Image
+            style={styles.logo}
+            source={images.logo}
+            resizeMode="contain"
+          />
+          <Text style={styles.signUpLabel}>sign up</Text>
+
           <FormField
             label="Username"
             placeholder="Enter your username"
@@ -70,7 +77,7 @@ const SignUp = () => {
             handleChangeText={(e) => setForm({ ...form, confirmPassword: e })}
           />
           <CustomButton
-            isLoading={isSubmitting}
+            isLoading={true}
             label="create account"
             handlePress={onSubmitAsync}
           />
@@ -83,14 +90,19 @@ const SignUp = () => {
 const styles = StyleSheet.create({
   signUpMainContainer: {
     justifyContent: "center",
+    alignItems: "center",
     minHeight: screenHeight * 0.86, //calculates 86% of the screen height
     paddingHorizontal: 16,
   },
 
   signUpLabel: {
-    color: "#09090b",
+    color: "#18181b",
     fontSize: 26,
     fontWeight: "bold",
+  },
+  logo: {
+    height: 125,
+    width: 125,
   },
 });
 export default SignUp;

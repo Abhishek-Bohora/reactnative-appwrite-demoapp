@@ -5,6 +5,7 @@ import {
   Dimensions,
   Alert,
   ScrollView,
+  Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "../../components/FormField";
@@ -13,6 +14,7 @@ import { useState } from "react";
 const { height: screenHeight } = Dimensions.get("window");
 import { signIn } from "../../lib/appwrite";
 import { router } from "expo-router";
+import images from "../../constants/images";
 
 const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,6 +38,11 @@ const SignIn = () => {
     <SafeAreaView>
       <ScrollView>
         <View style={styles.signInMainContainer}>
+          <Image
+            style={styles.logo}
+            source={images.logo}
+            resizeMode="contain"
+          />
           <Text style={styles.signInLabel}>Login</Text>
           <FormField
             label="Email"
@@ -62,12 +69,17 @@ const styles = StyleSheet.create({
   signInMainContainer: {
     minHeight: screenHeight * 0.8,
     justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 16,
   },
   signInLabel: {
-    color: "#09090b",
+    color: "#18181b",
     fontSize: 26,
     fontWeight: "bold",
+  },
+  logo: {
+    height: 125,
+    width: 125,
   },
 });
 
