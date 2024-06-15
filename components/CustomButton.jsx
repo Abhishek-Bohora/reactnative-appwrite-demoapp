@@ -6,12 +6,13 @@ import {
   ActivityIndicator,
 } from "react-native";
 
-function CustomButton({ isLoading, label }) {
+function CustomButton({ isLoading, label, handlePress }) {
   return (
     <TouchableOpacity
       style={isLoading ? styles.loadingButton : styles.customButton}
       activeOpacity={0.7}
       disabled={isLoading}
+      onPress={handlePress}
     >
       <View style={styles.textContainer}>
         <Text style={styles.customButtonText}>{label}</Text>
@@ -27,7 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#2563eb",
     alignContent: "center",
     justifyContent: "center",
-
     paddingVertical: 8,
     paddingHorizontal: 20,
     marginTop: 16,
@@ -44,13 +44,14 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   loadingButton: {
     height: 45,
     backgroundColor: "#60a5fa",
     alignContent: "center",
     justifyContent: "center",
-
     paddingVertical: 8,
     paddingHorizontal: 20,
     marginTop: 16,

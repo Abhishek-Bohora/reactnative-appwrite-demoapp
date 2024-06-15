@@ -1,4 +1,5 @@
 import { View, Text, TextInput, StyleSheet } from "react-native";
+import { Link } from "expo-router";
 
 function FormField({ label, placeholder, handleChangeText }) {
   return (
@@ -16,7 +17,7 @@ function FormField({ label, placeholder, handleChangeText }) {
 
 const styles = StyleSheet.create({
   formFieldContainer: {
-    width: "80%",
+    width: "100%",
     marginVertical: 10,
     alignSelf: "center",
   },
