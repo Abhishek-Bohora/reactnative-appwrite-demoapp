@@ -1,4 +1,4 @@
-# This is just a dummy project was i trying appwrite with react-native
+# This is just a dummy project i was trying appwrite with react-native
 
 ## Just a random screenshot of a different screens
 
