@@ -30,6 +30,7 @@ const GlobalProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        // providing entire application with the value of the state
         isLoggedIn,
         isLoading,
         user,
